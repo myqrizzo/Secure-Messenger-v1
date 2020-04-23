@@ -26,9 +26,9 @@ app.use('/api/items', items);
 // Serve static assests if in production
 if(process.env.NODE_ENV === 'production'){
   //Set static folder
-  app.use(express.static(__dirname + 'build'));
+  app.use(express.static(path.join(__dirname , 'build')));
 
-  app.get('/', (req, res) => {
+  app.get('*', (req, res) => {
      res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
   });
 }

@@ -57,26 +57,26 @@ class ItemModal extends Component {
             onClick={this.toggle}
           >
             Add Item
-          </Button>) : (<h4 className="mb-3 ml-4">Please log in to manage items</h4>
+          </Button>) : (<h4 className="mb-3 ml-4">Please log in to see your messages</h4>
           )}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Add To Shopping List</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Send a new message</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <Label for="item">Item</Label>
+                <Label for="item">Message Text</Label>
                 <Input
                   type="text"
                   name="name"
                   id="item"
-                  placeholder="Add shopping item"
+                  placeholder="Type your message here"
                   onChange={this.onChange}
                 />
                 <Button
                   color="dark"
                   style={{ marginTop: '2rem' }}
                   block
-                >Add Item</Button>
+                >Send</Button>
               </FormGroup>
             </Form>
           </ModalBody>

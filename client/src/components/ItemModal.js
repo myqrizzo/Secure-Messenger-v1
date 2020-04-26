@@ -56,7 +56,7 @@ class ItemModal extends Component {
             style={{ marginBottom: '2rem' }}
             onClick={this.toggle}
           >
-            Add Item
+            Send a new message
           </Button>) : (<h4 className="mb-3 ml-4">Please log in to see your messages</h4>
           )}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>

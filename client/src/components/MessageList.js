@@ -14,7 +14,7 @@ class MessageList extends Component {
     };
 
     componentDidMount() {
-        if (this.props.isAuthenticated) this.props.getItems();
+        {this.props.isAuthenticated && this.props.getItems()}
     }
 
     onDeleteClick = (id) => {

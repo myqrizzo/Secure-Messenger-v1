@@ -30,15 +30,14 @@ class MessageList extends Component {
                         {items.map(({ _id, name }) => (
                             <CSSTransition key={_id} timeout={500} classNames="fade">
                                 <ListGroupItem>
-                                    {this.props.isAuthenticated ? (
-                                        <Button
-                                            className="remove-bin"
-                                            color="danger"
-                                            size="sm"
-                                            onClick={this.onDeleteClick.bind(this, _id)}
-                                        >
-                                            &times;
-                                        </Button>) : null}
+                                    <Button
+                                        className="remove-bin"
+                                        color="danger"
+                                        size="sm"
+                                        onClick={this.onDeleteClick.bind(this, _id)}
+                                    >
+                                        &times;
+                                    </Button>
                                     {name}
                                 </ListGroupItem>
                             </CSSTransition>

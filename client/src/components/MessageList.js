@@ -13,13 +13,15 @@ class MessageList extends Component {
         isAuthenticated: PropTypes.bool
     };
 
+    componentDidMount() {
+        if (this.props.isAuthenticated) this.props.getItems();
+    }
+
     onDeleteClick = (id) => {
         this.props.deleteItem(id);
     };
 
     render() {
-        if (!this.props.isAuthenticated) return null;
-        this.props.getItems();
         const { items } = this.props.item;
         return (
             <Container>

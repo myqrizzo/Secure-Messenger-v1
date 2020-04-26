@@ -24,7 +24,7 @@ class MessageList extends Component {
     render() {
         const { items } = this.props.item;
         return (
-            <Container>
+     /*       <Container>
                 <ListGroup>
                     <TransitionGroup className='message-list'>
                         {items.map(({ _id, name }) => (
@@ -44,7 +44,7 @@ class MessageList extends Component {
                         ))}
                     </TransitionGroup>
                 </ListGroup>
-            </Container>
+            </Container> */
         );
     }
 }

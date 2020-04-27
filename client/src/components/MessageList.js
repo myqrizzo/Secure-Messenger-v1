@@ -38,7 +38,7 @@ class MessageList extends Component {
                                     >
                                         &times;
                                     </Button>
-                                    {name} {date}
+                                    {body} | {date}
                                 </ListGroupItem>
                             </CSSTransition>
                         ))}

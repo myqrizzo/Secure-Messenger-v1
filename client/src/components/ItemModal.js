@@ -16,7 +16,8 @@ import PropTypes from 'prop-types';
 class ItemModal extends Component {
   state = {
     modal: false,
-    name: ''
+    body: '',
+    email: ''
   };
 
   static propTypes = {
@@ -37,7 +38,8 @@ class ItemModal extends Component {
     e.preventDefault();
 
     const newItem = {
-      name: this.state.name
+      body: this.state.body,
+      email: this.state.email
     };
 
     //Add item via addItem actions
@@ -64,10 +66,18 @@ class ItemModal extends Component {
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
+              <Label for="item">Recipient Email</Label>
+                <Input
+                  type="text"
+                  name="email"
+                  id="item"
+                  placeholder="Type the e-mail address here"
+                  onChange={this.onChange}
+                />
                 <Label for="item">Message Text</Label>
                 <Input
                   type="text"
-                  name="name"
+                  name="body"
                   id="item"
                   placeholder="Type your message here"
                   onChange={this.onChange}

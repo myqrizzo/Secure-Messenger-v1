@@ -9,10 +9,10 @@ import { tokenConfig } from './authActions';
 import { returnErrors } from './errorActions';
 
 
-export const getItems = () => (dispatch, getState) => {
+export const getItems = email => (dispatch, getState) => {
     dispatch(setItemsLoading());
     axios
-        .get('/api/items', tokenConfig(getState))
+        .get(`/api/items/${email}`, tokenConfig(getState))
         .then(res =>
             dispatch({
                 type: GET_ITEMS,

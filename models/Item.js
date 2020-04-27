@@ -3,9 +3,17 @@ const Schema = mongoose.Schema;
 
 //Create Schema
 const ItemSchema = new Schema({
-  name: {
+  email: {
     type: String,
     required: true
+  },
+  body: {
+    type: String,
+    required: true
+  },
+  read: {
+    type: Boolean,
+    default: false
   },
   date: {
       type: Date,

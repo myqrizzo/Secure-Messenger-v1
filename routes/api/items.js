@@ -8,8 +8,8 @@ const Item = require('../../models/Item');
 // @route Get api/items
 // @desc Get All Items
 // @access Public
-router.get('/', auth, (req, res) => {
-    Item.find()
+router.get('/:email', auth, (req, res) => {
+    Item.findByEmail(user.email)
       .sort({ date: -1 })
       .then(items => res.json(items));
 });
@@ -20,7 +20,8 @@ router.get('/', auth, (req, res) => {
 // @access Private
 router.post('/', auth, (req, res) => {
     const newItem = new Item({
-        name: req.body.name
+        body: req.body.body,
+        email: req.body.email
     });
 
     newItem.save().then(item => res.json(item));

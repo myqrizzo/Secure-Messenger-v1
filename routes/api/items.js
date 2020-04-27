@@ -22,7 +22,7 @@ router.post('/', auth, (req, res) => {
     const newItem = new Item({
         body: req.body.body,
         toemail: req.body.toemail,
-        fromemail: req.header('x-auth-token')
+        fromemail: jwt.verify(req.header('x-auth-token'), config.get('jwtSecret'))  
     });
 
     newItem.save().then(item => res.json(item));

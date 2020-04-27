@@ -70,7 +70,7 @@ class ItemModal extends Component {
                 <Input
                   type="text"
                   name="email"
-                  id="item"
+                  id="email"
                   placeholder="Type the e-mail address here"
                   onChange={this.onChange}
                 />
@@ -78,7 +78,7 @@ class ItemModal extends Component {
                 <Input
                   type="text"
                   name="body"
-                  id="item"
+                  id="body"
                   placeholder="Type your message here"
                   onChange={this.onChange}
                 />

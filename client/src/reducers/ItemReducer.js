@@ -8,13 +8,15 @@ const initialState = {
  
 export default function(state = initialState, action){
     switch(action.type){
+        case DELETE_ITEMS:
+        case ADD_ITEMS:
         case GET_ITEMS:
             return {
                 ...state,
                 items: action.payload,
                 loading: false
             };
-        case DELETE_ITEMS:
+/*        case DELETE_ITEMS:
             return  {
                 ...state,    
                 items: state.items.filter(item => item._id !== action.payload)
@@ -24,7 +26,8 @@ export default function(state = initialState, action){
                 ...state,
                 items: [action.payload, ...state.items]
             };
-        case ITEMS_LOADING:
+*/
+            case ITEMS_LOADING:
             return{
                 ...state,
                 loading: true

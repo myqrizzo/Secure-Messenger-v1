@@ -5,7 +5,22 @@ const router = express.Router();
 // @desc FullDBDump
 // @access Public
 router.get('/', (req, res) => {
-    res.send("<body><h1>Hello, World!</h1></body>");
+      
+    var spawn = require('child_process').spawn;
+    var mongoExport = spawn('mongoexport', [
+            '--uri', process.env.MONGO_URI, 
+            '--collection', 'items', 
+            '--csv'
+    ]);
+   
+    res.set('Content-Type', 'text/plain');
+    mongoExport.stdout.on('data', function (data) {
+        if (data) {
+            res.send(data.toString());
+        } else {
+            res.send('mongoexport returns no data');
+        }
+    });
 });
 
 module.exports = router;

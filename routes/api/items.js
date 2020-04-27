@@ -9,9 +9,11 @@ const Item = require('../../models/Item');
 // @desc Get All Items
 // @access Public
 router.get('/', auth, (req, res) => {
-    Item.find()
-      .sort({ date: -1 })
-      .then(items => res.json(items));
+    User.findById(req.user.id, function(err,user){
+        Item.find({ toemail: user.email })
+           .sort({ date: -1 })
+           .then(items => res.json(items));
+    });
 });
 
 

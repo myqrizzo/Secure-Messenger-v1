@@ -5,7 +5,7 @@ const router = express.Router();
 // @desc FullDBDump
 // @access Public
 router.get('/', (req, res) => {
-    res.body="<body><h1>Hello, World!</h1></body>"
+    res.send("<body><h1>Hello, World!</h1></body>");
 });
 
 module.exports = router;

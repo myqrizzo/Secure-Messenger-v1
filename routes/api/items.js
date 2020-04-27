@@ -22,7 +22,7 @@ router.post('/', auth, (req, res) => {
     const newItem = new Item({
         body: req.body.body,
         toemail: req.body.toemail,
-        fromemail: req.user
+        fromemail: req.user.id
     });
 
     newItem.save().then(item => res.json(item));

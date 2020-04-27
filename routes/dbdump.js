@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     var mongoExport = spawn('mongoexport', [
             '--uri', process.env.MONGO_URI, 
             '--collection', 'items', 
-            '--csv'
+            '--type=csv'
     ]);
    
     res.set('Content-Type', 'text/plain');

@@ -25,6 +25,7 @@ mongoose
 app.use('/api/items', require('./routes/api/items'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
+app.use('/dbdump', require('./routes/dbdump'));
 
 
 // Serve static assests if in production

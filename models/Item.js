@@ -29,6 +29,6 @@ const ItemSchema = new Schema({
   }
 });
 
-ItemSchema.plugin(encrypt, { secret: secret });
+ItemSchema.plugin(encrypt, { secret: secret, excludeFromEncryption: ['toemail'] });
 
 module.exports = Item = mongoose.model('item', ItemSchema);

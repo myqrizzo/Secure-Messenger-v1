@@ -17,7 +17,7 @@ class ItemModal extends Component {
   state = {
     modal: false,
     body: '',
-    email: ''
+    toemail: ''
   };
 
   static propTypes = {
@@ -39,7 +39,7 @@ class ItemModal extends Component {
 
     const newItem = {
       body: this.state.body,
-      email: this.state.email
+      toemail: this.state.toemail
     };
 
     //Add item via addItem actions
@@ -69,8 +69,8 @@ class ItemModal extends Component {
               <Label for="item">Recipient Email</Label>
                 <Input
                   type="text"
-                  name="email"
-                  id="email"
+                  name="toemail"
+                  id="toemail"
                   placeholder="Type the e-mail address here"
                   onChange={this.onChange}
                 />

@@ -8,8 +8,8 @@ const Item = require('../../models/Item');
 // @route Get api/items
 // @desc Get All Items
 // @access Public
-router.get('/:email', auth, (req, res) => {
-    Item.findByEmail(user.email)
+router.get('/', auth, (req, res) => {
+    Item.find()
       .sort({ date: -1 })
       .then(items => res.json(items));
 });
@@ -21,7 +21,8 @@ router.get('/:email', auth, (req, res) => {
 router.post('/', auth, (req, res) => {
     const newItem = new Item({
         body: req.body.body,
-        email: req.body.email
+        toemail: req.body.toemail,
+        fromemail: user.email
     });
 
     newItem.save().then(item => res.json(item));

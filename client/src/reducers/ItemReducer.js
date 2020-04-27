@@ -8,8 +8,6 @@ const initialState = {
  
 export default function(state = initialState, action){
     switch(action.type){
-        case DELETE_ITEMS:
-        case ADD_ITEMS:
         case GET_ITEMS:
             return {
                 ...state,
@@ -27,6 +25,8 @@ export default function(state = initialState, action){
                 items: [action.payload, ...state.items]
             };
 */
+            case DELETE_ITEMS:
+            case ADD_ITEMS:
             case ITEMS_LOADING:
             return{
                 ...state,

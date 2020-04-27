@@ -19,13 +19,17 @@ router.get('/', auth, (req, res) => {
 // @desc Create An Item
 // @access Private
 router.post('/', auth, (req, res) => {
-    const newItem = new Item({
-        body: req.body.body,
-        toemail: req.body.toemail,
-        fromemail: req.user.id
-    });
 
-    newItem.save().then(item => res.json(item));
+    User.findById(req.user.id, function(err,user){
+
+        const newItem = new Item({
+            body: req.body.body,
+            toemail: req.body.toemail,
+            fromemail: user.email
+        });
+
+        newItem.save().then(item => res.json(item));
+    });
 });
 
 // @route DELETE api/items/:id

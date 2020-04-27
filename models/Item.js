@@ -1,4 +1,8 @@
 const mongoose = require('mongoose');
+const encrypt = require('mongoose-encryption');
+
+const secret = process.env.MONGODB_KEY;
+
 const Schema = mongoose.Schema;
 
 //Create Schema
@@ -24,5 +28,7 @@ const ItemSchema = new Schema({
       default: Date.now
   }
 });
+
+ItemSchema.plugin(encrypt, { secret: secret });
 
 module.exports = Item = mongoose.model('item', ItemSchema);

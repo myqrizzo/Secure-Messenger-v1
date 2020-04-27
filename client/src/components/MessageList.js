@@ -27,7 +27,7 @@ class MessageList extends Component {
             <Container>
                 <ListGroup>
                     <TransitionGroup className='message-list'>
-                        {items.map(({ _id, name, date }) => (
+                        {items.map(({ _id, fromemail, body, date }) => (
                             <CSSTransition key={_id} timeout={500} classNames="fade">
                                 <ListGroupItem>
                                     <Button
@@ -38,7 +38,7 @@ class MessageList extends Component {
                                     >
                                         &times;
                                     </Button>
-                                    {body} | {date}
+                                    {fromemail} | {body} | {date}
                                 </ListGroupItem>
                             </CSSTransition>
                         ))}

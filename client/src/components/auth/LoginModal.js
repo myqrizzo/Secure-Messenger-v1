@@ -73,7 +73,6 @@ class LoginModal extends Component {
         };
 
         this.props.login(user);
-        href = "\\";
     };
 
     render() {
